@@ -43,4 +43,18 @@ public class Main {
         inventory.putProduct(gruszka);
         inventory.print();
     }
+
+    static void reverseString(String value) {
+
+    }
+
+    /**
+     * Utworzyć klasę Telefon: string imie, string nazwisko, long numer
+     *
+     * Utwórz tablice takich obiektow, wypełniając ją jakąś przykładową zawartością.
+     * Zdefiniuj funkcje: znajdzNazwiskoWyswietl, znajdzNumer
+     * */
+    static void studiaZadanie() {
+
+    }
 }

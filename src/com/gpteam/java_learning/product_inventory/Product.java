@@ -5,16 +5,10 @@ public class Product {
    private int cena;
    private int quantity;
 
-   private static int id = 0;
-
     public Product(String cena, int id, int quantity) {
         this.nazwa = cena;
         this.cena = id;
         this.quantity = quantity;
-        id++;
-    }
-
-    public Product () {
     }
 
     public String getNazwa() {
