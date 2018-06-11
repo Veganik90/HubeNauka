@@ -1,10 +1,5 @@
 package com.gpteam.java_learning.zadanie3;
 
-
-
-import java.util.Random;
-import java.util.Scanner;
-
 /**================================================================================================
  * vD381L
  *
@@ -48,54 +43,56 @@ import java.util.Scanner;
  *
  * Metody pomocnicze do zadań:
  * Są one podane jako podpowiedź, nie wymóg.
+ * 3 - String.equalsIgnoreCase()
  * 11, 12, 13 - String.substring(), String.length()
  *
  * ================================================================================================
- * []
+ * [X]
  *
  * Zadanie 1.
  * Napisz metodę, która prosi użytkownika o imię, a potem wita go, używając tego imienia.
  *\
  *
  * ------------------------------------------------------------------------------------------------
- * []
+ * [X]
  *
  * Zadanie 2.
  * Napisz metodę, która prosi użytkownika o imię i wita go, tylko wtedy, kiedy jego imieniem
  * jest Hube lub Gabe.
  * ------------------------------------------------------------------------------------------------
- * []
+ * [X]
  *
  * Zadanie 3.
  * Napisz metodę, która prosi o imię użytkownika i wita go tylko wtedy, gdy jest nim Hube lub Gabe,
  * ignorując przy sprawdzaniu wielkość liter.
  * ------------------------------------------------------------------------------------------------
- * []
+ * [X]
  *
  * Zadanie 4.
- * Napisz metodę, która jako argument przyjmuje liczbę całkowitą n i wyświetla sumę od 1 do n.
+ * Napisz metodę, która jako argument przyjmuje liczbę całkowitą n i wyświetla
+ * obliczoną sumę od 1 do n.
  * ------------------------------------------------------------------------------------------------
- * []
+ * [X]
  *
  * Zadanie 5.
- * Napisz metodę, która jako argumenty przyjmuje dwie dodatnie liczby całkowite i oblicza ich NWD,
+ * Napisz metodę, która jako argumenty przyjmuje dwie liczby całkowite i oblicza ich NWD,
  * metodą odejmowania.
  * https://pl.wikipedia.org/wiki/Algorytm_Euklidesa
  * ------------------------------------------------------------------------------------------------
- * []
+ * [X]
  *
  * Zadanie 6.
  * Napisz metodę, która konwertuje liczbę zmiennoprzecinkową podaną w argumencie, z kilometrów
  * na mile i ją zwraca. Zastosuj printy, aby zobaczyć wartość przed i po, z dopisanymi odpowiednimi
  * jednostkami.
  * ------------------------------------------------------------------------------------------------
- * []
+ * [X]
  *
  * Zadanie 7.
  * Napisz metodę, która losuje liczbę całkowitą z przedziału 1 - 100.
  *     - zadaniem użytkownika jest znalezienie wylosowanej liczby,
- *     - po każdej próbie odgadnięcia, metoda mówi czy podana liczba jest większa czy mniejsza
- *       od wylosowanej,
+ *     - po każym wprowadzeniu liczby przez użytkownika, metoda mówi czy podana
+ *       liczba jest większa czy mniejsza od wylosowanej oraz inkrementuje ilosc prob,
  *     - po odgadnięciu, wypisuje odgadniętą liczbę i w nowej linii ilość prób.
  * ------------------------------------------------------------------------------------------------
  * []
@@ -204,106 +201,5 @@ import java.util.Scanner;
  *
  * ================================================================================================
  */
-public class Main {
-    static Scanner scanner = new Scanner(System.in);
-
-
-    public static void main(String... args) {
-
-        znajdzLiczbe();
-
-
-
-
-    }
-
-    public static void  podajImie(){
-        String imie;
-
-        imie = scanner.nextLine();
-        System.out.println("czesc" + imie);
-    }
-
-    public static void podajImie2() {
-        String imie;
-        imie = scanner.nextLine();
-
-        if (imie.equals("Hube") || imie.equals("Gabe")) {
-            System.out.println("czesc " + imie); // if (warunek) if ( (imie.equals() || imie.equals()) { }
-        } else {
-            System.out.println("zle imie");
-        }
-    }
-
-    public static void podajImie3() {
-        String imie;
-        imie = scanner.nextLine();
-
-        if (imie.equalsIgnoreCase("Hube") || imie.equalsIgnoreCase("Gabe")) {
-            System.out.println("czesc " + imie);
-        } else {
-            System.out.println("zle imie");
-        }
-    }
-
-    public static void podajLiczbe(int n) {
-        int suma = 0; //
-        for(int i = 1; i <= n; i++) {
-            suma +=i; // suma = suma + i;
-
-
-        }
-        System.out.println("suma to: " + n);
-    }
-
-    public static void NWD(int a, int b) {
-        while(a != b ){
-            if (a > b){
-                a -= b; // a = a - b
-
-            } else {
-                b -= a; // b = b-a
-            }
-        }
-        System.out.println("NWD podanych liczb to: " + a);
-    }
-
-    public static double kmhToMph(double kmh) {
-
-        return kmh * 0.62;
-    }
-
-    public static void znajdzLiczbe() {
-        Random losui = new Random();
-        int wylosowanaliczba = losui.nextInt(101); // metoda nextInt z arg. bound (przedzial 1-100),
-        int inputOdUzytkownika;
-        int iloscProb = 0;
-
-       do {
-           System.out.println("wylosowana liczba: " + wylosowanaliczba);
-           System.out.print("Podaj liczbe: ");
-
-           inputOdUzytkownika = scanner.nextInt();
-           if (wylosowanaliczba == inputOdUzytkownika){
-               System.out.println("Zgadles liczbe: " + wylosowanaliczba + "\nzgadles po probach: " + iloscProb  );
-               break;
-           }
-
-           else if (wylosowanaliczba > inputOdUzytkownika){
-               System.out.println("Wyloowales wieksza liczbe. ");
-               iloscProb++;
-
-           } else {
-               System.out.println("Wylosowales mniejsza liczbe.");
-               iloscProb++;
-           }
-
-
-       } while (wylosowanaliczba != inputOdUzytkownika);
-
-
-
-
-    }
-
+public class zadania {
 }
